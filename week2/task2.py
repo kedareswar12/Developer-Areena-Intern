@@ -1,7 +1,3 @@
-"""
-Student Grade Calculator - Version 1
-Calculates grades based on marks and maintains a record list
-"""
 
 class GradeCalculator:
     def __init__(self):

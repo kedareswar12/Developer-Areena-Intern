@@ -86,17 +86,17 @@ class PersonalInfoManager:
     
     def display_person(self, person):
 
-        print(f"\n👤 ID: {person['id']}")
-        print(f"📛 Name: {person['name']}")
-        print(f"🎂 Age: {person['age']} years")
-        print(f"📍 City: {person['city']}")
-        print(f"❤️  Hobbies: {', '.join(person['hobbies']) if person['hobbies'] else 'No hobbies listed'}")
-        print(f"📅 Added on: {person.get('created_at', 'N/A')}")
+        print(f"\n ID: {person['id']}")
+        print(f"Name: {person['name']}")
+        print(f" Age: {person['age']} years")
+        print(f" City: {person['city']}")
+        print(f"  Hobbies: {', '.join(person['hobbies']) if person['hobbies'] else 'No hobbies listed'}")
+        print(f" Added on: {person.get('created_at', 'N/A')}")
     
     def search_person(self):
 
         if not self.people:
-            print("\n📭 No records to search!")
+            print("\n No records to search!")
             return
         
         search_name = input("\nEnter name to search: ").strip().lower()
@@ -113,12 +113,12 @@ class PersonalInfoManager:
                 found = True
         
         if not found:
-            print(f"\n❌ No person found with name containing '{search_name}'")
+            print(f"\n No person found with name containing '{search_name}'")
     
     def update_person(self):
         
         if not self.people:
-            print("\n📭 No records to update!")
+            print("\n No records to update!")
             return
         
         self.display_all()
@@ -128,7 +128,7 @@ class PersonalInfoManager:
             person = next((p for p in self.people if p['id'] == person_id), None)
             
             if not person:
-                print("❌ Person not found!")
+                print(" Person not found!")
                 return
             
             print("\nLeave blank to keep current value")
@@ -211,7 +211,7 @@ class PersonalInfoManager:
             from collections import Counter
             hobby_count = Counter(all_hobbies)
             most_common = hobby_count.most_common(3)
-            print(f"\n🏆 Most Popular Hobbies:")
+            print(f"\n Most Popular Hobbies:")
             for hobby, count in most_common:
                 print(f"   - {hobby}: {count} person(s)")
     
@@ -245,11 +245,11 @@ class PersonalInfoManager:
             elif choice == '6':
                 self.display_statistics()
             elif choice == '7':
-                print("\n👋 Thank you for using Personal Information Manager!")
+                print("\n Thank you for using Personal Information Manager!")
                 print("All data has been saved to", self.filename)
                 break
             else:
-                print("\n❌ Invalid choice! Please enter a number between 1 and 7.")
+                print("\n Invalid choice! Please enter a number between 1 and 7.")
 
 
 if __name__ == "__main__":
